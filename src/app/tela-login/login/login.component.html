@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center mb-4">
+  <img
+    class="img-width"
+    src="../../../assets/img/ford.png"
+    alt="Logo da Ford"
+  />
+</div>
+
+<h4 class="text-center text-color">Boas vindas</h4>
+
+<!-- <app-mensagem *ngIf="erro == 1" mensagem="Usuário ou senha inválido"></app-mensagem>||| colocar no form : (ngSubmit)="fazerLogin()" #loginForm="ngForm" -->
+
+<form class="form mt-4 width">
+  <div class="form-group mb-4">
+    <input
+      class="form-control"
+      placeholder="Insira seu email"
+      name="usuario"
+      required
+    />
+    <!-- <app-mensagem ||| colocar no form do user [(ngModel)]="usuario" #campoUsuario="ngModel"
+      *ngIf="campoUsuario.invalid && campoUsuario.touched"
+      mensagem="Campo usuário obrigatório"
+    ></app-mensagem> -->
+  </div>
+
+  <div class="form-group mb-4">
+    <input
+      class="form-control"
+      placeholder="Insira sua senha"
+      type="password"
+      name="senha"
+      required
+    />
+    <!-- <app-mensagem ||| colocar no form da senha [(ngModel)]="senha" #campoSenha="ngModel"
+      *ngIf="campoSenha.invalid && campoSenha.touched"
+      mensagem="Campo senha obrigatório"
+    ></app-mensagem> ||| colocar no button abaixo [disabled]="loginForm.invalid"  -->
+  </div>
+
+  <button type="submit" class="btn btn-secondary width">Entrar</button>
+</form>
