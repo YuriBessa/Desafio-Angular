@@ -5,12 +5,16 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'tela-login',
+    redirectTo: 'login',
   },
   {
-    path: 'tela-login',
+    path: 'login',
     loadChildren: () =>
       import('./tela-login/tela-login.module').then((m) => m.TelaLoginModule),
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
 ];
 

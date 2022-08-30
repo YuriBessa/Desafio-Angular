@@ -8,17 +8,19 @@
 
 <h4 class="text-center text-color">Boas vindas</h4>
 
-<!-- <app-mensagem *ngIf="erro == 1" mensagem="Usuário ou senha inválido"></app-mensagem>||| colocar no form : (ngSubmit)="fazerLogin()" #loginForm="ngForm" -->
+<!-- <app-mensagem *ngIf="erro == 1" mensagem="Usuário ou senha inválido"></app-mensagem> -->
 
-<form class="form mt-4 width">
+<form class="form mt-4 width" (ngSubmit)="fazerLogin()" #loginForm="ngForm">
   <div class="form-group mb-4">
     <input
       class="form-control"
       placeholder="Insira seu email"
+      [(ngModel)]="usuario"
       name="usuario"
+      #campoUsuario="ngModel"
       required
     />
-    <!-- <app-mensagem ||| colocar no form do user [(ngModel)]="usuario" #campoUsuario="ngModel"
+    <!-- <app-mensagem
       *ngIf="campoUsuario.invalid && campoUsuario.touched"
       mensagem="Campo usuário obrigatório"
     ></app-mensagem> -->
@@ -29,14 +31,22 @@
       class="form-control"
       placeholder="Insira sua senha"
       type="password"
+      [(ngModel)]="senha"
       name="senha"
+      #campoSenha="ngModel"
       required
     />
-    <!-- <app-mensagem ||| colocar no form da senha [(ngModel)]="senha" #campoSenha="ngModel"
+    <!-- <app-mensagem
       *ngIf="campoSenha.invalid && campoSenha.touched"
       mensagem="Campo senha obrigatório"
-    ></app-mensagem> ||| colocar no button abaixo [disabled]="loginForm.invalid"  -->
+    ></app-mensagem> -->
   </div>
 
-  <button type="submit" class="btn btn-secondary width">Entrar</button>
+  <button
+    type="submit"
+    class="btn btn-secondary width"
+    [disabled]="loginForm.invalid"
+  >
+    Entrar
+  </button>
 </form>
