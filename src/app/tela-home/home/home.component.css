@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+.full-height {
+  height: 90vh;
+}
+
+.full {
+  width: 98vw;
+  height: 90vh;
+}
+
+.text-color {
+  color: rgb(40, 97, 159);
+}
+
+.card-dimension {
+  width: 41vw;
+  height: 89vh;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.left-icon {
+  width: 30px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.right-icon {
+  width: 30px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.navbar {
+  margin-bottom: 15vh;
+}
