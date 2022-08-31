@@ -1,3 +1,4 @@
+import { MensagemModule } from './../componentes/mensagem/mensagem.module';
 import { TelaLoginRoutingModule } from './tela-login-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [TelaLoginComponent, LoginComponent],
-  imports: [CommonModule, TelaLoginRoutingModule, FormsModule],
+  imports: [CommonModule, TelaLoginRoutingModule, FormsModule, MensagemModule],
   exports: [TelaLoginComponent],
 })
 export class TelaLoginModule {}

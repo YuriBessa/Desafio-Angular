@@ -1,5 +1,5 @@
 import { AutenticacaoService } from './../../autenticacao/autenticacao.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  usuarioInvalido = false;
   usuario = '';
   senha = '';
 
@@ -23,7 +24,9 @@ export class LoginComponent implements OnInit {
       () => {
         this.router.navigate(['home']);
       },
-      (error) => console.log(error)
+      () => {
+        this.usuarioInvalido = true;
+      }
     );
   }
 }
