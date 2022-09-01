@@ -7,8 +7,9 @@
     />
     <img
       src="../../../assets/img/user-icon.png"
-      class="right-icon position-relative"
-      (click)="abrirLogoutMenu()"
+      class="right-icon position-absolute"
+      (click)="logoutMenu.abrirMenuLogout()"
     />
+    <app-logout-menu #logoutMenu></app-logout-menu>
   </nav>
 </header>

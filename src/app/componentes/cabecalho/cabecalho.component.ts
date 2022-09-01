@@ -1,6 +1,5 @@
-import { Router } from '@angular/router';
 import { UsuarioService } from './../../autenticacao/usuario/usuario.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cabecalho',
@@ -10,18 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class CabecalhoComponent {
   user$ = this.usuarioService.retornaUsuario();
 
-  constructor(private usuarioService: UsuarioService, private router: Router) {}
-
-  abrirLogoutMenu(): void {
-    console.log('o menu de Logout clicado');
-  }
+  constructor(private usuarioService: UsuarioService) {}
 
   abrirMenuLateral(): void {
-    console.log('o menu de Logout clicado');
-  }
-
-  logout() {
-    this.usuarioService.logout();
-    this.router.navigate(['']);
+    console.log('o menu lateral clicado');
   }
 }

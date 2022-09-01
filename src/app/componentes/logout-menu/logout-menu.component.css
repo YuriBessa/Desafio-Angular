@@ -1,0 +1,45 @@
+.logout-menu-bar {
+  width: 15%;
+  height: 25%;
+  position: fixed;
+  max-width: 320px;
+  margin: 0;
+  padding: 1em;
+  background: white;
+  top: 50px;
+  right: -90%;
+  transition: right 0.3s ease-out;
+  z-index: 1;
+}
+
+.active-menu .logout-menu-bar {
+  right: 0;
+}
+
+.active-menu .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.menu-item {
+  cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.area-usuario img {
+  width: 45px;
+  margin-right: 10px;
+}
+
+.area-usuario h3 {
+  display: inline-block;
+  font-size: 25px;
+  margin: 0;
+}

@@ -1,1 +1,22 @@
-<p>logout-menu works!</p>
+<div [ngClass]="{ 'active-menu': mostraMenuLogout }">
+  <div class="logout-menu-bar">
+    <i
+      class="fa fa-window-close menu-item"
+      (click)="abrirMenuLogout()"
+      (keyup.space)="abrirMenuLogout()"
+    ></i>
+    <ul class="list-unstyled list-group list-group-flush">
+      <li class="area-usuario" *ngIf="usuario$ | async as usuario">
+        <img src="../../../assets/img/user-icon.png" />
+        <h3 class="cursor-default">{{ usuario.name }}</h3>
+      </li>
+      <li
+        class="list-group-item list-group-item-action menu-item"
+        (click)="deslogar()"
+      >
+        Logout
+      </li>
+    </ul>
+  </div>
+  <div class="overlay" (click)="abrirMenuLogout()"></div>
+</div>

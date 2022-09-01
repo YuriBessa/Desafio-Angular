@@ -1,0 +1,15 @@
+.left-icon {
+  width: 30px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.right-icon {
+  width: 30px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.navbar {
+  margin-bottom: 5vh;
+}

@@ -1,3 +1,4 @@
+import { CabecalhoModule } from './../componentes/cabecalho/cabecalho.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -6,6 +7,6 @@ import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [CommonModule, HomeRoutingModule],
+  imports: [CommonModule, HomeRoutingModule, CabecalhoModule],
 })
 export class HomeModule {}

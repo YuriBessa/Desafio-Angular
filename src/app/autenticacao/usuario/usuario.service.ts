@@ -14,7 +14,12 @@ export class UsuarioService {
     }
   }
 
-  usuarioSubject = new BehaviorSubject<Usuario>({});
+  usuarioSubject = new BehaviorSubject<Usuario>({
+    id: '',
+    name: '',
+    password: '',
+    email: '',
+  });
 
   private decodificaJWT() {
     const token = this.tokenService.retornaToken();
@@ -33,7 +38,12 @@ export class UsuarioService {
 
   logout() {
     this.tokenService.excluiToken();
-    this.usuarioSubject.next({});
+    this.usuarioSubject.next({
+      id: '',
+      name: '',
+      password: '',
+      email: '',
+    });
   }
 
   estaLogado() {

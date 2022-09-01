@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
       () => {
         this.router.navigate(['home']);
       },
-      () => {
+      (error) => {
+        console.log(error);
         this.usuarioInvalido = true;
       }
     );
