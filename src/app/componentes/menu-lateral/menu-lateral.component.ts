@@ -16,4 +16,8 @@ export class MenuLateralComponent implements OnInit {
   abrirMenuLateral(): void {
     this.mostraMenuLat = !this.mostraMenuLat;
   }
+
+  abrirDashboard(): void {
+    this.router.navigate(['dashboard']);
+  }
 }

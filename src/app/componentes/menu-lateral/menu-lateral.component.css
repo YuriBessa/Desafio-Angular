@@ -35,4 +35,5 @@
   border: groove;
   background-color: darkgray;
   margin: 3px;
+  cursor: pointer;
 }
