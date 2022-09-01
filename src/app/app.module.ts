@@ -1,3 +1,4 @@
+import { AutenticacaoModule } from './autenticacao/autenticacao.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TelaLoginModule } from './tela-login/tela-login.module';
 import { NgModule } from '@angular/core';
@@ -8,7 +9,13 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, TelaLoginModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    TelaLoginModule,
+    HttpClientModule,
+    AutenticacaoModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
