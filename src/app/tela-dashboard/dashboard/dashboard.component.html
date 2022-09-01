@@ -1,0 +1,56 @@
+<app-cabecalho></app-cabecalho>
+<h1 class="text-center text-color">Dashboard FORD</h1>
+
+<div class="container mt-4" *ngIf="veiculos$ | async as veiculos">
+  <div class="row">
+    <app-cards class="col-3" [titulo]="'Veículo'">
+      <select
+        class="form-control mt-3"
+        type="number"
+        [(ngModel)]="veiculoId"
+        (ngModelChange)="enviaVeiculoId(veiculoId)"
+      >
+        <option *ngFor="let veiculo of veiculos" [ngValue]="veiculo.id">
+          {{ veiculo.vehicle }}
+        </option>
+      </select>
+    </app-cards>
+
+    <app-cards class="col-3" [titulo]="'Total de Vendas'">
+      <h2 class="text-info" *ngIf="veiculoEscolhido; else blankSelection">
+        {{ veiculoEscolhido.volumetotal }}
+      </h2>
+      <p>Unid.</p>
+    </app-cards>
+
+    <app-cards class="col-3" [titulo]="'Conectados'">
+      <h2 class="text-info" *ngIf="veiculoEscolhido; else blankSelection">
+        {{ veiculoEscolhido.connected }}
+      </h2>
+      <p>Unid.</p>
+    </app-cards>
+
+    <app-cards class="col-3" [titulo]="'Update Software'">
+      <h2 class="text-info" *ngIf="veiculoEscolhido; else blankSelection">
+        {{ veiculoEscolhido.softwareUpdates }}
+      </h2>
+      <p>Unid.</p>
+    </app-cards>
+  </div>
+</div>
+
+<div class="container mt-2 mb-2">
+  <div class="row justify-content-center">
+    <img
+      class="col-7"
+      *ngIf="veiculoEscolhido; else blankImage"
+      src="assets/img/{{ veiculoEscolhido.vehicle }}.png"
+      alt="Imagem do carro selecionado"
+    />
+  </div>
+</div>
+
+<app-tabela-informacoes></app-tabela-informacoes>
+
+<ng-template #blankSelection><h2>-</h2></ng-template>
+<ng-template #blankImage></ng-template>

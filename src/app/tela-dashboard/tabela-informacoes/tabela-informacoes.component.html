@@ -1,0 +1,62 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr class="bg-color">
+        <th class="width">Código - Vin</th>
+        <div>
+          <th class="width">Odômetro</th>
+          <th class="width">Nível de Combustível</th>
+          <th class="width">Status</th>
+          <th class="width">Lat.</th>
+          <th class="width">Long.</th>
+        </div>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="two-row">
+        <td>
+          <input
+            type="text"
+            [formControl]="campoTabela"
+            [(ngModel)]="valorCampoTabela"
+          />
+        </td>
+        <div *ngIf="infoVeiculos$ | async as infoVeiculos; else elseblock">
+          <div *ngIf="valorCampoTabela.length == 20; else elseblock">
+            <td>
+              <div class="width-2" *ngFor="let informacao of infoVeiculos">
+                <span class="font-weight">{{ informacao.odometer }} Km</span>
+              </div>
+            </td>
+
+            <td>
+              <div class="width-2" *ngFor="let informacao of infoVeiculos">
+                <span class="font-weight">{{ informacao.fuelLevel }}%</span>
+              </div>
+            </td>
+            <td>
+              <div class="width-2" *ngFor="let informacao of infoVeiculos">
+                <span class="font-weight">{{ informacao.status }}</span>
+              </div>
+            </td>
+            <td>
+              <div class="width-2" *ngFor="let informacao of infoVeiculos">
+                <span class="font-weight">{{ informacao.lat }}</span>
+              </div>
+            </td>
+            <td>
+              <div class="width-2" *ngFor="let informacao of infoVeiculos">
+                <span class="font-weight">{{ informacao.long }}</span>
+              </div>
+            </td>
+          </div>
+        </div>
+      </tr>
+      <tr class="bg-color">
+        <td colspan="6"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #elseblock></ng-template>
