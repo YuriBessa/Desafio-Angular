@@ -17,6 +17,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./tela-home/home.module').then((m) => m.HomeModule),
   },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./tela-dashboard/tela-dashboard.module').then(
+        (m) => m.TelaDashboardModule
+      ),
+  },
 ];
 
 @NgModule({

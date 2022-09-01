@@ -1,0 +1,19 @@
+<div [ngClass]="{ 'active-menu': mostraMenuLat }">
+  <div class="menu-lateral-bar">
+    <i
+      class="fa fa-window-close menu-item"
+      (click)="abrirMenuLateral()"
+      (keyup.space)="abrirMenuLateral()"
+    ></i>
+    <img class="img-sidebar" src="./../../../assets/img/ford.png" />
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="opcao-sidebar">
+        <a class="nav-link link-dark" (click)="abrirMenuLateral()">Home</a>
+      </li>
+      <li class="opcao-sidebar">
+        <a [routerLink]="['dashboard']" class="nav-link link-dark">Dashboard</a>
+      </li>
+    </ul>
+  </div>
+  <div class="overlay" (click)="abrirMenuLateral()"></div>
+</div>

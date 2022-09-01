@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoutMenuComponent implements OnInit {
   mostraMenuLogout = false;
-  usuario$ = this.usuarioService.retornaUsuario();
+  usuarioLogado$ = this.usuarioService.retornaUsuario();
 
   constructor(private usuarioService: UsuarioService, private router: Router) {}
 

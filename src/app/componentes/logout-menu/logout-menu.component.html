@@ -6,7 +6,7 @@
       (keyup.space)="abrirMenuLogout()"
     ></i>
     <ul class="list-unstyled list-group list-group-flush">
-      <li class="area-usuario" *ngIf="usuario$ | async as usuario">
+      <li class="area-usuario" *ngIf="usuarioLogado$ | async as usuario">
         <img src="../../../assets/img/user-icon.png" />
         <h3 class="cursor-default">{{ usuario.name }}</h3>
       </li>

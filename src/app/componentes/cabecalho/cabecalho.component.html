@@ -3,8 +3,10 @@
     <img
       src="../../../assets/img/list.svg"
       class="left-icon position-relative"
-      (click)="abrirMenuLateral()"
+      (click)="menuLateral.abrirMenuLateral()"
     />
+    <app-menu-lateral #menuLateral></app-menu-lateral>
+
     <img
       src="../../../assets/img/user-icon.png"
       class="right-icon position-absolute"
